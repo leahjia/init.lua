@@ -4,8 +4,8 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("v", "<C-j>", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "<C-k>", ":m '<-2<CR>gv=gv")
 
-vim.keymap.set("<C-d>", '<C-d>zz')
-vim.keymap.set("<C-u>", '<C-u>zz')
+-- vim.keymap.set("<C-d>", '<C-d>zz')
+-- vim.keymap.set("<C-u>", '<C-u>zz')
 
 vim.keymap.set("x", "<leader>p", "\"_dP")
 
