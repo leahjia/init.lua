@@ -1,3 +1,4 @@
+vim.opt.guicursor = ""
 vim.opt.nu = true
 vim.opt.relativenumber = true;
 
@@ -16,5 +17,8 @@ vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 
 vim.opt.updatetime = 50
+
+vim.opt.colorcolumn = "100"
+vim.cmd('highlight ColorColumn ctermbg=10 guibg=#5b95b5')
 
 vim.g.mapleader = " "
