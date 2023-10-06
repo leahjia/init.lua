@@ -26,6 +26,5 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "100"
-vim.cmd('highlight ColorColumn ctermbg=10 guibg=#5b95b5')
 
 vim.g.mapleader = " "
