@@ -32,6 +32,7 @@ return require('packer').startup(function(use)
   use('nvim-treesitter/playground')
   use('mbbill/undotree')
   use('tpope/vim-fugitive')
+  use('tpope/vim-commentary')
   use('theprimeagen/harpoon')
   use('github/copilot.vim')
 
