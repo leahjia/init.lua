@@ -19,6 +19,7 @@ vim.keymap.set("n", "<leader>Y", "\"+Y")
 vim.keymap.set("n", "<leader>c", "ggVG\"+y")
 
 vim.keymap.set("n", "<leader>e", "gg\"_dGi")
+vim.keymap.set("n", "<leader>f", "ggVG=")
 
 vim.keymap.set('n', '<leader>n', ':let new_name=input("New filename: ") | silent execute "!mv % %:h/" . new_name | execute "e %:h/" . new_name<CR>')
 
