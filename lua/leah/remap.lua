@@ -23,6 +23,10 @@ vim.keymap.set("n", "<leader>f", "ggVG=")
 
 vim.keymap.set('n', '<leader>n', ':let new_name=input("New filename: ") | silent execute "!mv % %:h/" . new_name | execute "e %:h/" . new_name<CR>')
 
+-- comments
+vim.keymap.set("n", "<C-/>", ":normal Vgcc<CR>");
+vim.keymap.set("v", "<C-/>", ":normal Vgcc<CR>");
+
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
 vim.keymap.set("n", "Q", "<nop>")
