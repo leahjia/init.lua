@@ -34,6 +34,15 @@ vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+vim.keymap.set('n', '<leader>r', function()
+    local find = vim.fn.input('Search: ')
+    if vim.fn.search(find, 'nw') == 0 then
+        print('String not found: ' .. find)
+        return
+    end
+    local replace = vim.fn.input('Replace with: ')
+    vim.cmd('%s/' .. vim.fn.escape(find, '/') .. '/' .. vim.fn.escape(replace, '/') .. '/g')
+end)
 
 -- set executable file
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
