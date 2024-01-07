@@ -17,9 +17,10 @@ vim.keymap.set("n", "<leader>y", "\"+y")
 vim.keymap.set("v", "<leader>y", "\"+y")
 vim.keymap.set("n", "<leader>Y", "\"+Y")
 vim.keymap.set("n", "<leader>c", "ggVG\"+y")
-
 vim.keymap.set("n", "<leader>e", "gg\"_dGi")
 vim.keymap.set("n", "<leader>f", "ggVG=")
+
+vim.keymap.set("n", "vm", "va{V")
 
 vim.keymap.set('n', '<leader>n', ':let new_name=input("New filename: ") | silent execute "!mv % %:h/" . new_name | execute "e %:h/" . new_name<CR>')
 
@@ -34,17 +35,22 @@ vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
 vim.keymap.set('n', '<leader>r', function()
-    local find = vim.fn.input('Search: ')
+    local find = vim.fn.input('Replace: ')
     if vim.fn.search(find, 'nw') == 0 then
         print('String not found: ' .. find)
         return
     end
-    local replace = vim.fn.input('Replace with: ')
+    local replace = vim.fn.input('Replace: ' .. find .. ' with: ')
     vim.cmd('%s/' .. vim.fn.escape(find, '/') .. '/' .. vim.fn.escape(replace, '/') .. '/g')
 end)
 
 -- set executable file
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>")
 
-vim.keymap.set("n", "<C-S-c>", ":ToggleCopilot<CR>", { silent = true })
+-- copilot
+vim.keymap.set("n", "<C-S-c>", ":ToggleCopilot<CR>")
+
+-- write
+vim.keymap.set("n", "<C-s>", ":w<CR>")
