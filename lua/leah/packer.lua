@@ -18,15 +18,15 @@ return require('packer').startup(function(use)
   -- use 'nvim-tree/nvim-web-devicons'
 
   use({
-	  'navarasu/onedark.nvim',
-	--   'rose-pine/neovim',
-	  as = 'onedark',
-	--   as = 'rose-pine',
+      -- "tiagovla/tokyodark.nvim",
+      "catppuccin/nvim",
+	  -- 'navarasu/onedark.nvim',
+	  -- 'rose-pine/neovim',
 	  config = function()
-		  vim.cmd('colorscheme onedark')
-		--   vim.cmd('colorscheme rose-pine')
+		  vim.cmd('colorscheme catppuccin')
 	  end
   })
+
 
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use('nvim-treesitter/playground')
