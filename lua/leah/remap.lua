@@ -16,9 +16,9 @@ vim.keymap.set("x", "<leader>p", "\"_dP")
 vim.keymap.set("n", "<leader>y", "\"+y")
 vim.keymap.set("v", "<leader>y", "\"+y")
 vim.keymap.set("n", "<leader>Y", "\"+Y")
-vim.keymap.set("n", "<leader>c", "ggVG\"+y")
+vim.keymap.set("n", "<leader>c", "maggVG\"+y`a")
 vim.keymap.set("n", "<leader>e", "gg\"_dGi")
-vim.keymap.set("n", "<leader>f", "ggVG=")
+vim.keymap.set("n", "<leader>f", "maggVG=`a")
 
 vim.keymap.set("n", "vm", "va{V")
 
