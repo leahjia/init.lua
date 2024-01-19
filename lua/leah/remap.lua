@@ -47,38 +47,6 @@ vim.keymap.set('n', '<leader>r', function()
     vim.cmd('%s/' .. vim.fn.escape(find, '/') .. '/' .. vim.fn.escape(replace, '/') .. '/g')
 end)
 
--- replace within visual selection
-vim.keymap.set('v', '<leader>r', function()
-    -- save current register and clipboard values
-    local original_reg = vim.fn.getreg('"')
-    local original_regtype = vim.fn.getregtype('"')
-    local original_clipboard = vim.fn.getreg('+')
-
-    -- normal select yank
-    vim.cmd('normal! gvy')
-
-    local selection = vim.fn.getreg('"')
-    local find = vim.fn.input('Replace: ')
-    if not string.find(selection, find) then
-        print('String not found: ' .. find)
-        -- restore register and clipboard values
-        vim.fn.setreg('"', original_reg, original_regtype)
-        vim.fn.setreg('+', original_clipboard)
-        return
-    end
-    local replace = vim.fn.input('Replace: ' .. find .. ' with: ')
-
-    -- escape patterns for subs command
-    local escaped_find = vim.fn.escape(find, '/')
-    local escaped_replace = vim.fn.escape(replace, '/')
-
-    -- replace
-    vim.cmd(string.format("'<,'>s/%s/%s/g", escaped_find, escaped_replace))
-
-    vim.fn.setreg('"', original_reg, original_regtype)
-    vim.fn.setreg('+', original_clipboard)
-end, {silent = true})
-
 -- set executable file
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>")
 
