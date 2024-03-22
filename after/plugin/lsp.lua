@@ -20,7 +20,7 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
 })
 
 lsp.setup_nvim_cmp({
-  mapping = cmp_mappings
+    mapping = cmp_mappings
 })
 
 lsp.on_attach(function(client, bufnr)
@@ -32,16 +32,24 @@ lsp.setup()
 
 -- for leptos
 require('lspconfig').rust_analyzer.setup {
-  settings = {
-    ["rust-analyzer"] = {
-      procMacro = {
-        ignored = {
-            leptos_macro = {
-                "server",
+    settings = {
+        ["rust-analyzer"] = {
+            procMacro = {
+                ignored = {
+                    leptos_macro = {
+                        "server",
+                    },
+                },
             },
         },
-      },
-    },
-  }
+    }
 }
+
+vim.lsp.handlers["textDocument/publishDiagnostics"] =
+    vim.lsp.with(
+    vim.lsp.diagnostic.on_publish_diagnostics,
+    {
+        virtual_text = true,
+    }
+)
 
