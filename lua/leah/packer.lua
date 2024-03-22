@@ -4,58 +4,63 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-  -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
+    -- Packer can manage itself
+    use 'wbthomason/packer.nvim'
 
-  use {
-	  'nvim-telescope/telescope.nvim', tag = '0.1.2',
-	  -- or                            , branch = '0.1.x',
-	  requires = { {'nvim-lua/plenary.nvim'} }
-  }
-    
-  -- use 'navarasu/onedark.nvim'
+    use {
+        'nvim-telescope/telescope.nvim', tag = '0.1.2',
+        -- or                            , branch = '0.1.x',
+        requires = { {'nvim-lua/plenary.nvim'} }
+    }
 
-  -- use 'nvim-tree/nvim-web-devicons'
+    -- use 'navarasu/onedark.nvim'
 
-  use({
-      -- "tiagovla/tokyodark.nvim",
-      "catppuccin/nvim",
-	  -- 'navarasu/onedark.nvim',
-	  -- 'rose-pine/neovim',
-	  config = function()
-		  vim.cmd('colorscheme catppuccin')
-	  end
-  })
+    -- use 'nvim-tree/nvim-web-devicons'
+
+    use({
+        "catppuccin/nvim",
+        -- 'navarasu/onedark.nvim',
+        -- 'rose-pine/neovim',
+        config = function()
+            vim.cmd('colorscheme catppuccin')
+        end
+    })
 
 
-  use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
-  use('nvim-treesitter/playground')
-  use('mbbill/undotree')
-  use('tpope/vim-fugitive')
-  use('tpope/vim-commentary')
-  use('theprimeagen/harpoon')
-  use('github/copilot.vim')
+    use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+    use('nvim-treesitter/playground')
+    use('mbbill/undotree')
+    use('tpope/vim-fugitive')
+    use('tpope/vim-commentary')
+    use('theprimeagen/harpoon')
+    use('github/copilot.vim')
 
-  use {
-	  'VonHeikemen/lsp-zero.nvim',
-	  branch = 'v2.x',
-	  requires = {
-          -- LSP Support
-		  {'neovim/nvim-lspconfig'},             -- Required
-		  {'williamboman/mason.nvim'},           -- Optional
-		  {'williamboman/mason-lspconfig.nvim'}, -- Optional
+    use {
+        'VonHeikemen/lsp-zero.nvim',
+        branch = 'v1.x',
+        requires = {
+            -- LSP Support
+            {'neovim/nvim-lspconfig'},
+            {'williamboman/mason.nvim'},
+            {'williamboman/mason-lspconfig.nvim'},
 
-		  -- Autocompletion
-		  {'hrsh7th/nvim-cmp'},     -- Required
-		  {'hrsh7th/cmp-nvim-lsp'}, -- Required
-		  {'L3MON4D3/LuaSnip'},     -- Required
-	  }
-  }
+            -- Autocompletion
+            {'hrsh7th/nvim-cmp'},
+            {'hrsh7th/cmp-buffer'},
+            {'hrsh7th/cmp-path'},
+            {'saadparwaiz1/cmp_luasnip'},
+            {'hrsh7th/cmp-nvim-lsp'},
+            {'hrsh7th/cmp-nvim-lua'},
 
-  use {
-      'nvim-lualine/lualine.nvim',
-      requires = { 'nvim-tree/nvim-web-devicons', opt = true }
-  }
+            -- Snippets
+            {'L3MON4D3/LuaSnip'},
+            {'rafamadriz/friendly-snippets'},
+        }
+    }
 
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    }
 
 end)
