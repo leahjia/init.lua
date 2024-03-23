@@ -55,3 +55,6 @@ vim.keymap.set("n", "<C-S-c>", ":ToggleCopilot<CR>")
 
 -- write
 vim.keymap.set("n", "<C-s>", ":w<CR>")
+
+-- diagnostics
+vim.keymap.set('n', '<leader>d', ':lua vim.diagnostic.goto_next()<CR>')

@@ -2,7 +2,7 @@ local lsp = require('lsp-zero')
 
 -- v3
 
--- disgnostics
+-- diagnostics
 lsp.set_sign_icons({
     error = '✘',
     warn = '▲',
@@ -11,7 +11,7 @@ lsp.set_sign_icons({
 })
 
 vim.diagnostic.config({
-  virtual_text = true,
+  virtual_text = false,
   severity_sort = true,
   float = {
     style = 'minimal',
