@@ -34,6 +34,7 @@ return require('packer').startup(function(use)
     use('tpope/vim-commentary')
     use('theprimeagen/harpoon')
     use('github/copilot.vim')
+    use('nvim-tree/nvim-web-devicons')
 
     use {
         'VonHeikemen/lsp-zero.nvim',
