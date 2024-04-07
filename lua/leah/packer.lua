@@ -70,4 +70,13 @@ return require('packer').startup(function(use)
         end
     }
 
+    use({
+        "kylechui/nvim-surround",
+        tag = "*",
+        config = function()
+            require("nvim-surround").setup({
+            })
+        end
+    })
+
 end)
