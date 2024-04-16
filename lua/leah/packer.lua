@@ -15,8 +15,6 @@ return require('packer').startup(function(use)
 
     -- use 'navarasu/onedark.nvim'
 
-    -- use 'nvim-tree/nvim-web-devicons'
-
     use({
         "catppuccin/nvim",
         -- 'navarasu/onedark.nvim',
@@ -25,7 +23,6 @@ return require('packer').startup(function(use)
             vim.cmd('colorscheme catppuccin')
         end
     })
-
 
     use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
     use('nvim-treesitter/playground')

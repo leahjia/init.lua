@@ -31,6 +31,7 @@ require('mason-lspconfig').setup({
         'jdtls',
         'jedi_language_server',
         'jsonls',
+        'html',
     },
     handlers = {
         lsp.default_setup,
