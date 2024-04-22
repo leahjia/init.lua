@@ -28,3 +28,16 @@ vim.opt.updatetime = 50
 vim.opt.colorcolumn = "120"
 
 vim.g.mapleader = " "
+
+vim.api.nvim_create_augroup("JsIndent", { clear = true })
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "javascript",
+    group = "JsIndent",
+    callback = function()
+        vim.opt_local.tabstop = 2
+        vim.opt_local.softtabstop = 2
+        vim.opt_local.shiftwidth = 2
+        vim.opt_local.expandtab = true
+    end,
+})
+
