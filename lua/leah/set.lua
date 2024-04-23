@@ -29,10 +29,10 @@ vim.opt.colorcolumn = "120"
 
 vim.g.mapleader = " "
 
-vim.api.nvim_create_augroup("JsIndent", { clear = true })
+local js_jsx_indent_group = vim.api.nvim_create_augroup("JsJsxIndent", { clear = true })
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = "javascript",
-    group = "JsIndent",
+    pattern = {"javascript", "javascriptreact", "javascript.jsx"},
+    group = js_jsx_indent_group,
     callback = function()
         vim.opt_local.tabstop = 2
         vim.opt_local.softtabstop = 2
