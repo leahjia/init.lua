@@ -28,17 +28,12 @@ require('mason-lspconfig').setup({
     ensure_installed = {
         'tsserver',
         'rust_analyzer',
-        'jdtls',
-        'jedi_language_server',
-        'jsonls',
-        'html',
+        'lua_ls'
     },
     handlers = {
-        lsp.default_setup,
-        lua_ls = function()
-            local lua_opts = lsp_zero.nvim_lua_ls()
-            require('lspconfig').lua_ls.setup(lua_opts)
-        end,
+        function(server_name)
+            require('lspconfig')[server_name].setup({})
+        end
     }
 })
 

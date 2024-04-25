@@ -10,7 +10,7 @@ return require('packer').startup(function(use)
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.2',
         -- or                            , branch = '0.1.x',
-        requires = { {'nvim-lua/plenary.nvim'} }
+        requires = { { 'nvim-lua/plenary.nvim' } }
     }
 
     -- use 'navarasu/onedark.nvim'
@@ -24,7 +24,7 @@ return require('packer').startup(function(use)
         end
     })
 
-    use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+    use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
     use('nvim-treesitter/playground')
     use('mbbill/undotree')
     use('tpope/vim-fugitive')
@@ -32,25 +32,26 @@ return require('packer').startup(function(use)
     use('theprimeagen/harpoon')
     use('github/copilot.vim')
     use('nvim-tree/nvim-web-devicons')
+    use("lewis6991/gitsigns.nvim")
 
     use {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v3.x',
         requires = {
             -- LSP Support
-            {'neovim/nvim-lspconfig'},
-            {'williamboman/mason.nvim'},
-            {'williamboman/mason-lspconfig.nvim'},
+            { 'neovim/nvim-lspconfig' },
+            { 'williamboman/mason.nvim' },
+            { 'williamboman/mason-lspconfig.nvim' },
 
             -- Autocompletion
-            {'hrsh7th/nvim-cmp'},
-            {'hrsh7th/cmp-nvim-lsp'},
-            {'hrsh7th/cmp-buffer'},
-            {'hrsh7th/cmp-path'},
-            {'hrsh7th/cmp-nvim-lua'},
-            {'L3MON4D3/LuaSnip'},
-            {'saadparwaiz1/cmp_luasnip'},
-            {'rafamadriz/friendly-snippets'},
+            { 'hrsh7th/nvim-cmp' },
+            { 'hrsh7th/cmp-nvim-lsp' },
+            { 'hrsh7th/cmp-buffer' },
+            { 'hrsh7th/cmp-path' },
+            { 'hrsh7th/cmp-nvim-lua' },
+            { 'L3MON4D3/LuaSnip' },
+            { 'saadparwaiz1/cmp_luasnip' },
+            { 'rafamadriz/friendly-snippets' },
         }
     }
 
@@ -75,5 +76,4 @@ return require('packer').startup(function(use)
             })
         end
     })
-
 end)
