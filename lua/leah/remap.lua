@@ -18,7 +18,6 @@ vim.keymap.set("v", "<leader>y", "\"+y")
 vim.keymap.set("n", "<leader>Y", "\"+Y")
 vim.keymap.set("n", "<leader>c", "maggVG\"+y`a")
 vim.keymap.set("n", "<leader>e", "gg\"_dGi")
--- vim.keymap.set("n", "<leader>f", ":Neoformat<CR>")
 vim.keymap.set('n', '<leader>f', vim.lsp.buf.format)
 
 vim.keymap.set("n", "vm", "va{V")
@@ -30,12 +29,14 @@ vim.keymap.set("n", "<C-/>", ":normal Vgcc<CR>");
 vim.keymap.set("v", "<C-/>", ":normal Vgcc<CR>");
 
 vim.keymap.set("i", "<C-c>", "<Esc>")
+vim.opt.hlsearch = true
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 vim.keymap.set("n", "Q", "<nop>")
 
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+vim.keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
 
 -- replace all
 vim.keymap.set('n', '<leader>r', function()
@@ -59,3 +60,11 @@ vim.keymap.set("n", "<C-s>", ":w<CR>")
 
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
+vim.keymap.set("n", "<leader>t", ":NvimTreeToggle<CR>")
+
+-- move windows
+vim.keymap.set("n", "<C-h>", "<C-w>h")
+vim.keymap.set("n", "<C-j>", "<C-w>j")
+vim.keymap.set("n", "<C-k>", "<C-w>k")
+vim.keymap.set("n", "<C-l>", "<C-w>l")
+

@@ -32,7 +32,7 @@ vim.g.mapleader = " "
 
 local js_jsx_indent_group = vim.api.nvim_create_augroup("JsJsxIndent", { clear = true })
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = {"javascript", "javascriptreact", "javascript.jsx"},
+    pattern = {"javascript", "javascriptreact", "javascript.jsx", "css"},
     group = js_jsx_indent_group,
     callback = function()
         vim.opt_local.tabstop = 2

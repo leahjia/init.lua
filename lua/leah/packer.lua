@@ -33,6 +33,7 @@ return require('packer').startup(function(use)
     use('github/copilot.vim')
     use('nvim-tree/nvim-web-devicons')
     use("lewis6991/gitsigns.nvim")
+    use("nvim-tree/nvim-tree.lua")
 
     use {
         'VonHeikemen/lsp-zero.nvim',
