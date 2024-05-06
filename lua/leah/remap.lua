@@ -60,7 +60,12 @@ vim.keymap.set("n", "<C-s>", ":w<CR>")
 
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
-vim.keymap.set("n", "<leader>t", ":NvimTreeToggle<CR>")
+
+-- nvim-tree
+vim.keymap.set("n", "<C-b>", ":NvimTreeToggle<CR>")
+
+-- split a terminal
+vim.keymap.set("n", "<leader>j", ":split<CR>:term<CR>")
 
 -- move windows
 vim.keymap.set("n", "<C-h>", "<C-w>h")
