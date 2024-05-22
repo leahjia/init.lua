@@ -23,7 +23,6 @@ vim.keymap.set('n', '<leader>f', vim.lsp.buf.format)
 vim.keymap.set("n", "vm", "va{V")
 
 vim.keymap.set('n', '<leader>n', ':let new_name=input("New filename: ") | silent execute "!mv % %:h/" . new_name | execute "e %:h/" . new_name<CR>')
-vim.keymap.set('v', '<leader>/', 'y/\\V<C-R>=escape(@",\'/\\\')<CR><CR>')
 
 -- comments
 vim.keymap.set("n", "<C-/>", ":normal Vgcc<CR>");
@@ -38,6 +37,8 @@ vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
 vim.keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
+vim.keymap.set('v', '<leader>/', 'y/\\V<C-R>=escape(@",\'/\\\')<CR><CR>')
+vim.keymap.set('n', '<leader>/', 'yiw/<C-R>=escape(@",\'/\\\')<CR><CR>')
 
 -- replace all
 vim.keymap.set('n', '<leader>r', function()
