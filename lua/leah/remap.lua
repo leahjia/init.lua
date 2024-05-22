@@ -23,6 +23,7 @@ vim.keymap.set('n', '<leader>f', vim.lsp.buf.format)
 vim.keymap.set("n", "vm", "va{V")
 
 vim.keymap.set('n', '<leader>n', ':let new_name=input("New filename: ") | silent execute "!mv % %:h/" . new_name | execute "e %:h/" . new_name<CR>')
+vim.keymap.set('v', '<leader>/', 'y/\\V<C-R>=escape(@",\'/\\\')<CR><CR>')
 
 -- comments
 vim.keymap.set("n", "<C-/>", ":normal Vgcc<CR>");
