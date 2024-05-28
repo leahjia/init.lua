@@ -18,7 +18,19 @@ vim.keymap.set("v", "<leader>y", "\"+y")
 vim.keymap.set("n", "<leader>Y", "\"+Y")
 vim.keymap.set("n", "<leader>c", "maggVG\"+y`a")
 vim.keymap.set("n", "<leader>e", "gg\"_dGi")
-vim.keymap.set('n', '<leader>f', vim.lsp.buf.format)
+
+-- format
+local function format_or_select_buffer()
+    local clients = vim.lsp.buf_get_clients()
+    if next(clients) ~= nil then
+        vim.lsp.buf.format({ async = true })
+    else
+        local save_cursor = vim.fn.getpos(".")
+        vim.cmd("normal! ggVG=")
+        vim.fn.setpos(".", save_cursor)
+    end
+end
+vim.keymap.set('n', '<leader>f', format_or_select_buffer)
 
 vim.keymap.set("n", "vm", "va{V")
 
