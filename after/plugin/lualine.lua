@@ -3,10 +3,32 @@ if not status then
 	return
 end
 
+local function get_system_appearance()
+    local handle = io.popen("defaults read -g AppleInterfaceStyle 2>/dev/null")
+    local result = handle:read("*a")
+    handle:close()
+
+    if result:match("Dark") then
+        return "dark"
+    else
+        return "light"
+    end
+end
+
+local function get_lualine_theme()
+    local sys_appearance = get_system_appearance()
+    if sys_appearance == 'light' then
+        return 'ayu_light'
+    else
+        return 'ayu_dark'
+    end
+end
+
 lualine.setup({
 	options = {
 		icons_enabled = true,
-		theme = "ayu_dark",
+		-- theme = "ayu_dark",
+        theme = get_lualine_theme(),
 		component_separators = { left = "", right = "" },
 		section_separators = { left = "", right = "" },
 		disabled_filetypes = {
@@ -43,3 +65,10 @@ lualine.setup({
 	inactive_winbar = {},
 	extensions = {},
 })
+
+vim.api.nvim_create_autocmd("VimEnter", {
+    callback = function()
+        lualine.setup({ options = { theme = get_lualine_theme() } })
+    end
+})
+
