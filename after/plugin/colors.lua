@@ -37,6 +37,8 @@ function Theme(color)
 
     vim.cmd.colorscheme(color)
     vim.cmd('highlight ColorColumn ctermbg=10 guibg=#5b95b5')
+    vim.api.nvim_set_hl(0, "CopilotSuggestion", { fg = "#828282" })
+
     -- vim.api.nvim_set_hl(0, "Normal", { bg = nil })
     -- vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = nil })
     -- vim.api.nvim_set_hl(0, "LineNr", { bg = nil })
